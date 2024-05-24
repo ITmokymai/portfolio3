@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+   
+   <section>
+       <img src="background.png" id="bg">
+       <img src="moon.png" id="moon">
+       <img src="cloud1.png" id="cloud1">
+       <img src="cloud2.png" id="cloud2">
+       <img src="santa.png" id="santa">
+       <div id="trees"></div>
+       <h2 id="text">Su Naujaisiais metais</h2>
+       
+   </section>
+   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
+<script>   
+    gsap.to('#moon',{scrollTrigger:{scrub: 1},scale: 1.5,})
+    gsap.to('#bg',{scrollTrigger: {scrub: 1},scale: 1.2,})
+    gsap.to('#santa',{scrollTrigger: {scrub: 1},scale: 1.5,y:-500,x:2200})
+    gsap.to('#trees',{scrollTrigger: {scrub: 1},x:-500,})
+    gsap.to('#cloud1',{scrollTrigger: {scrub: 1},x:-200,})
+    gsap.to('#cloud2',{scrollTrigger: {scrub: 1},x:300,})
+    gsap.to('#text',{scrollTrigger: {scrub: 1},y:-1000,})
+</script>
+   
+    
+</body>
+</html>

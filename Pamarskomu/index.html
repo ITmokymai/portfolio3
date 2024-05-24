@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   
+   <h1>Žaidimas "Pamarskomu"</h1>
+   
+   <button onclick="playGame();">Pradėti žaidimą</button>
+   
+   <script>
+       function zaidejoPasirinkimas(userInput){
+           userInput = userInput.toLowerCase();
+           
+           if(userInput === 'akmuo' || userInput === 'popierius' || userInput === 'žirklės'){
+               return userInput;
+           }else{
+               console.log('error');
+           };    
+       };
+       
+       
+       function kompiuterioPasirinkimas(){
+           const randomNumber = Math.floor(Math.random()*3);
+           
+           switch(randomNumber){
+               case 0:
+                   return 'akmuo';
+                   break;
+               case 1:
+                   return 'popierius';
+                   break;
+               case 2:
+                   return 'žirklės';
+                   break;
+               default:
+                   return 'error';
+                   break;               
+           };
+           
+       };
+       
+       
+       function nustatytiLaimetoja(userChoice, computerChoice){
+           if(userChoice === computerChoice){
+               return 'Lygiosios';
+           };
+           
+           if(userChoice === 'akmuo'){
+               if(computerChoice === 'popierius'){
+                   return 'Komputeris laimėjo';   
+               }else{
+                   return 'Jūs laimėjote';
+               };
+           };
+           
+           
+           if(userChoice === 'popierius'){
+               if(computerChoice === 'žirklės'){
+                   return 'Kompiuteris laimėjo';
+               }else{
+                   return 'Jūs laimėjote';
+               };
+           };
+           
+           if(userChoice === 'žirklės'){
+               if(computerChoice === 'akmuo'){
+                   return 'Komputeris laimėjo';
+               }else{
+                   return 'Jūs laimėjote';
+               };
+           };  
+       };
+       
+       
+       function playGame(){
+           const userChoice = zaidejoPasirinkimas(prompt('Pasirink akmuo, popierius arba žirklės.'));
+           const computerChoice = kompiuterioPasirinkimas();
+           
+           alert('Tavo metimas:' + userChoice);
+           alert('Kompiuterio metimas: ' + computerChoice);
+           alert(nustatytiLaimetoja(userChoice, computerChoice));  
+       };
+    
+    
+    
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <h1>Mano atostogos</h1>
+    <div>
+        <img src="pav1.jpg" id="myimage">
+    </div>
+    <p>
+        <a href="#" id="previuos">Previuos</a>
+        <a href="#" id="next">Next</a>
+    </p>
+    <script>
+                            //0         //1         //2         //3
+        let myImages = ['pav1.jpg', 'pav2.jpg', 'pav3.jpg', 'pav4.jpg'];
+        let currentImage = 0;
+        
+        document.getElementById('next').onclick = nextPhoto;
+        document.getElementById('previuos').onclick = previuosPhoto;
+        
+        
+        function nextPhoto(){                   //0
+            currentImage++; //currentImage = currentImage + 1;
+            if(currentImage > 3){currentImage = 0; };
+            document.getElementById('myimage').src = myImages[currentImage];                                                //myImages[3] //pav4.jpg
+        };
+        
+        
+        function previuosPhoto(){
+            currentImage--; //currentImage = currentImage - 1 ;
+            if(currentImage < 0){currentImage = 3; };
+            document.getElementById('myimage').src = myImages[currentImage];
+        };
+        
+        
+        
+        
+        
+    
+    </script>
+</body>
+</html>

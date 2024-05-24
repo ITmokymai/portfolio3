@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+   
+   <h1>Pasirinkite maistą ir gėrimus</h1>
+   
+   
+   <form id="uzsakymoForma">
+      
+      <select id="desertai" name="desertai">
+          <option value="">Pasirink deserta</option>
+          <option value="ledai">Ledai</option>
+          <option value="žele">Žele</option>
+          <option value="šokoladas">Šokoladas</option>
+          <option value="vaisių saloto">Vaisių salotos</option>
+      </select>
+      <br>
+      <select id="gerimai" name="gerimas">
+         <option value="">Pasirinkite gėrimą</option>
+         <option value="vanduo">Vanduo</option>
+         <option value="sultys">Sultys</option>
+         <option value="jauda kava">Juoda kava</option>
+         <option value="kaučino">Kapučino</option>
+         <option value="late">Latė</option>
+         <option value="šalta arbata">Šalta arbata</option>  
+      </select>
+      
+<!--      pagrindinis patiekalas-->
+       
+       <br>
+       <button type="button" onclick="uzsakyti();">Užskayti</button>
+       
+       <h2>Jūsų užsakymas</h2>
+       <p id="info"></p>
+       
+       
+   </form>
+   
+   <script>
+      
+      const uzsakymoInfo = document.getElementById('info');
+       const desertai = [];
+       const gerimai = [];
+       
+       //sukurti pagrindiniai patiekalia masyvą
+       
+       function uzsakyti(){
+           const pasirinktasDesertas = document.getElementById('desertai').value;
+           const pasirinktasGerimas = document.getElementById('gerimai').value;
+           
+           //sukurti kintąmąjį pasirinktasMaistas
+           
+           if(pasirinktasDesertas !== ''){
+               desertai.push(pasirinktasDesertas);
+              
+              };
+           
+           if(pasirinktasGerimas !== ''){
+               
+              gerimai.push(pasirinktasGerimas);
+              };
+           
+           //Pdaryti patikrinimą ar nėra tuščias pasirinktasMaistas ir papildyti masyvą pasirinktasMaistas
+           
+           atnaujintiUzsakymoInfo();
+   
+       };
+       
+       function atnaujintiUzsakymoInfo(){
+           const uzsakymas = 'Jūsų užsakymas:<br>Desertai: ' + desertai.join(', ') + '<br>Gerimai: ' + gerimai.join(', '); //papildyti maistas.join(', ');
+           uzsakymoInfo.innerHTML = uzsakymas;
+           
+       };
+       
+       
+       
+       
+       
+   </script>
+    
+    
+    
+    
+   
+   
+    
+</body>
+</html>

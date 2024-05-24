@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Uždek, šviesą!!!</h1>
+   
+   <button onclick="on();">Įjungti</button>
+   
+   <img src="tamsa.png" id="lepma" width="100">
+   
+   <button onclick="off();">Išjungti</button>
+   
+   <script>
+       function on(){
+          document.getElementById('lepma').src = 'sviesa.png';
+       };
+       
+       function off(){
+          document.getElementById('lepma').src = 'tamsa.png';
+       };
+       
+       
+       
+    
+    
+   </script>
+    
+</body>
+</html>

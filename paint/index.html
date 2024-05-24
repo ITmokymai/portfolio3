@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  <input type="color" id="spalvosPalete">
+
+   <canvas id="piesimoLapas" width="1500" height="1500"></canvas>
+   
+   <script>
+       let lapas = document.getElementById('piesimoLapas');
+       let piesinys = lapas.getContext('2d');
+        let spalvosPalete = document.getElementById('spalvosPalete');
+
+       
+       let painting = false;
+       
+       function startPosition(){
+           painting = true;
+       };
+       
+       function finishedPosition(){
+           painting = false;
+           piesinys.beginPath();
+       };
+       
+       
+       function piesti(e){
+           if(!painting) return;
+           
+           piesinys.lineWidth = 5;
+           piesinys.lineCap = 'round'; //butt, square;
+           piesinys.strokeStyle = spalvosPalete.value;
+           piesinys.lineTo(e.clientX, e.clientY);
+           piesinys.stroke();
+           piesinys.beginPath();
+           piesinys.moveTo(e.clientX, e.clientY);   
+       }
+       
+       lapas.addEventListener('mousedown', startPosition);
+       lapas.addEventListener('mouseup', finishedPosition);
+       lapas.addEventListener('mousemove', piesti);
+       
+       
+   
+       
+    
+    
+    
+   </script>
+   
+    
+</body>
+</html>

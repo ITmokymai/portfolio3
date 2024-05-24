@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#game{
+    width: 500px;
+    height: 201px;
+    border:1px solid navy;
+    background-image: url(medziai.png);
+    background-size: contain;
+    background-repeat: repeat;
+    animation: medziai 30s infinite linear;
+    margin: 20px auto;
+    background-color: white;
+}
+h1{
+    text-align: center;
+    margin: 40px;
+    font-family: 'Tahoma';
+}
+body{
+    height: 100vh;
+    background-image: linear-gradient(45deg, #85FFBD,#FFFB7D);
+}
+@keyframes medziai{
+    0%{background-position: 0,0;}
+    100%{background-position: -1000px,0;}
+}
+#character{
+    width: 20px;
+    height: 50px;
+    background-color: cadetblue;
+    position: relative;
+    top:150px;
+    left:30px;
+}
+.animate{
+   animation-name:jump;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+}
+@keyframes jump{
+    0%{top:150px;}
+    30%{top:90px;}
+    70%{top:90px;}
+    100%{top:150px;}
+}
+#block{
+    width: 20px;
+    height: 20px;
+    background-color: blueviolet;
+    position: relative;
+    top:130px;
+    left: 500px;
+    animation-name: block;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes block{
+    0%{left:500px;}
+    100%{left:-40px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

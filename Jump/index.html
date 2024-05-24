@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" onclick="jump();">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+  
+  <h1>Šokliuko žaidimas</h1>
+   <div id="game">
+       <div id="character"></div>
+       <div id="block"></div>
+       
+   </div>
+   <script>
+     let soklys = document.getElementById('character');
+     let kliutis = document.getElementById('block');
+       
+       function jump(){
+           
+           if(soklys.classList != 'animate'){
+              soklys.classList.add('animate');
+              }
+           setTimeout(function(){
+               soklys.classList.remove('animate');
+           },500);
+           
+       };
+       
+       let pabaiga = setInterval(uzkliuvau,10);
+       
+       function uzkliuvau(){
+           let soklysTop = parseInt(window.getComputedStyle(soklys).getPropertyValue('top'));
+           let kliutisLeft = parseInt(window.getComputedStyle(kliutis).getPropertyValue('left'));
+           
+           if(kliutisLeft<20 && kliutisLeft>0 && soklysTop>=130){
+               kliutis.style.animation = 'none';
+               kliutis.style.display = 'none';
+               alert('Žaidimas baigtas!');
+           }     
+       };
+       
+       
+       
+    
+    
+    
+   </script>
+    
+</body>
+</html>
